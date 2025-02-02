@@ -6,7 +6,7 @@ import { Button } from './ui/button'
 import { useCartStore } from '@/app/(main)/_store/store'
 
 const Header = () => {
-    const { cartItems } = useCartStore()
+    const { cartItems, step } = useCartStore()
     const count = cartItems.reduce((sum, item) => sum + item.quantity, 0)
     return (
         <div className='fixed top-0 w-full border-b backdrop-blur-md z-50 supports-[backdrop-filter]:bg-background/60'>
@@ -17,7 +17,7 @@ const Header = () => {
                 <ul className='flex justify-center items-center gap-4 md:gap-6'>
                     <li>
                         <Link href={"/dashboard"}>
-                            <Button variant={"outline"}>
+                            <Button variant={"outline"} disabled={step !== "cart"}>
                                 <span>Dashboard</span>
                                 <LayoutDashboard />
                             </Button>
@@ -26,7 +26,7 @@ const Header = () => {
                     </li>
                     <li>
                         <Link href={"/services"}>
-                            <Button variant={"outline"}>
+                            <Button variant={"outline"} disabled={step !== "cart"} >
                                 <span>Services</span>
                                 <BriefcaseBusiness />
                             </Button>

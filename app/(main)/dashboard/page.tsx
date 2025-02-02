@@ -3,9 +3,7 @@ import { Chart } from './_components/Chart'
 
 const Dahboard = () => {
     return (
-        <div>
-            <Chart />
-        </div>
+        <Chart />
     )
 }
 
