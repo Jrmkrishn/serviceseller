@@ -91,8 +91,8 @@ export const useCartStore = create<States>()(
             changeStep: (stepData) => set(() => ({ step: stepData })),
         }),
         {
-            name: "cart-storage", // Storage key for localStorage
-            storage: createJSONStorage(() => localStorage), // Use localStorage
+            name: "cart-storage", 
+            storage: createJSONStorage(() => localStorage),
         }
     )
 );

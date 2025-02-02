@@ -33,8 +33,6 @@ const formatCurrency = (total: number) =>
 
 export function Chart() {
   const { saledItems } = useCartStore();
-  console.log(saledItems);
-
   const totalServices = saledItems.reduce((sum, item) => sum + item.quantity, 0);
   const totalRevenue = saledItems.reduce((sum, item) => sum + item.quantity * item.service.price, 0);
 
