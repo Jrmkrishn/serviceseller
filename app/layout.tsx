@@ -30,7 +30,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Header />
-          <main className="container mx-auto min-h-screen mt-40">
+          <main className="container mx-auto min-h-screen mt-28">
             {children}
           </main>
           <footer className="bg-muted/50 py-12">
