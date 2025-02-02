@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import {Inter } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Header from "@/components/header";
+import { Toaster } from "@/components/ui/sonner";
 const inter = Inter({
   subsets: ["latin"]
 })
@@ -18,7 +19,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html
+      suppressHydrationWarning
+      lang="en">
       <body
         suppressHydrationWarning
         className={`${inter.className} antialiased`}
@@ -29,6 +32,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <Toaster richColors  />
           <Header />
           <main className="container mx-auto min-h-screen mt-28">
             {children}

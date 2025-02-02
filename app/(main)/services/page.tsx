@@ -7,6 +7,7 @@ import { Search } from 'lucide-react'
 import Image from 'next/image'
 import React, { useState } from 'react'
 import { useCartStore } from '../_store/store'
+import { toast } from 'sonner'
 
 const Services = () => {
 
@@ -59,7 +60,11 @@ const Services = () => {
                 <span className='text-lg font-semibold'>${service.price}</span>
                 <span className='ml-2 text-sm text-muted-foreground'>{service.duration}</span>
               </div>
-              <Button onClick={() => addCartItem(service)}>Add to Cart</Button>
+              <Button onClick={() => {
+                addCartItem(service)
+                toast.success(`${service.name} added to Cart!`)
+              }
+              }>Add to Cart</Button>
             </CardContent>
           </Card>
         ))}

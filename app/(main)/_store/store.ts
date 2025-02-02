@@ -4,6 +4,7 @@ import { create } from "zustand"
 import { v4 as uuid } from "uuid"
 
 interface States {
+    step: "cart" | "customer" | "payment"
     cartItems: CartItem[]
     receipt: Receipt | null
     addCartItem: (service: Service) => void
@@ -11,10 +12,12 @@ interface States {
     removeCartItem: (id: string) => void
     clearCart: () => void
     handleCheckout: (customer: Customer, paymentMethod: "Credit Card" | "Upi" | "Cash") => void
+    changeStep: (stepData: "cart" | "customer" | "payment") => void
 }
 
 
 export const useCartStore = create<States>((set) => ({
+    step: "cart",
     cartItems: [],
     receipt: null,
 
@@ -65,6 +68,11 @@ export const useCartStore = create<States>((set) => ({
         return {
             receipt: newReceipt,
             cartItems: []
+        }
+    }),
+    changeStep: (stepData) => set(() => {
+        return {
+            step: stepData
         }
     })
 }))
