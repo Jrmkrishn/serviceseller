@@ -10,8 +10,7 @@ interface State { form: UseFormReturn<{ name: string; email: string; phone: stri
 
 const CustomerDetailsForm = ({ form }: State) => {
 
-    return (<>
-
+    return (<div className="p-6 space-y-4 text-sm sm:text-base">
         <FormField control={form.control} name="name" render={({ field }) => (
             <FormItem>
                 <FormLabel>Name</FormLabel>
@@ -42,7 +41,7 @@ const CustomerDetailsForm = ({ form }: State) => {
         <Button type="submit" variant={"secondary"} className="w-full flex items-center mt-4">
             Continue to Payment
         </Button>
-    </>
+    </div>
 
 
     );

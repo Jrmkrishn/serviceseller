@@ -37,7 +37,7 @@ export default function RootLayout({
           <main className="container mx-auto min-h-screen mt-28">
             {children}
           </main>
-          <footer className="bg-muted/50 py-12">
+          <footer className="py-12">
             <div className="container mx-auto px-4 text-center text-gray-200">
               <p>Made with 💖 by Jay</p>
             </div>

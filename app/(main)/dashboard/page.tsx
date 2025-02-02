@@ -3,7 +3,9 @@ import { Chart } from './_components/Chart'
 
 const Dahboard = () => {
     return (
-        <Chart />
+        <div className='p-6'>
+            <Chart />
+        </div>
     )
 }
 

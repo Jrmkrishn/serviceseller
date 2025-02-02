@@ -22,7 +22,7 @@ const ServiceList = ({ filterServices, addCartItem }: State) => {
             <CardTitle>{service.name}</CardTitle>
             <CardDescription>{service.description}</CardDescription>
           </CardHeader>
-          <CardContent className='flex justify-between items-center'>
+          <CardContent className='flex gap-2 flex-col sm:flex-row justify-between items-center'>
             <div>
               <span className='text-lg font-semibold'>${service.price}</span>
               <span className='ml-2 text-sm text-muted-foreground'>{service.duration}</span>

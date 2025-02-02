@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { ChevronRight, Minus, Plus, X } from "lucide-react";
+import { ChevronRight, Minus, Plus, ShoppingCart, X } from "lucide-react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useCartStore } from "../../_store/store";
 
@@ -8,21 +8,22 @@ const CartItemList = () => {
   const { cartItems, changeStep, updateQuantity, removeCartItem } = useCartStore();
 
   return (
-    <div className="max-w-lg mx-auto w-full h-full flex flex-col gap-2">
+    <div className="max-w-lg mx-auto w-full h-full flex flex-col gap-2 p-6">
       {cartItems.length === 0 ? (
         <p className="mx-auto text-center text-muted-foreground flex items-center gap-2">
+          <ShoppingCart className="w-6 h-6" />
           <span>Your cart is empty</span>
         </p>
       ) : (<>
         <ScrollArea className="h-[50vh]">
           {cartItems.map((item) => (
             <div
-              className="flex items-center justify-between rounded-lg border p-4 h-32"
+              className="flex items-center justify-between mb-2 rounded-lg border p-2 text-sm sm:text-base sm:p-4 h-32"
               key={item.service.id}
             >
               <div className="flex-1">
                 <h3 className="font-medium">{item.service.name}</h3>
-                <p>{item.service.price}</p>
+                <p>${item.service.price}</p>
               </div>
               <div className="flex items-center gap-2">
                 <Button
