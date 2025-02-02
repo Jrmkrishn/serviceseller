@@ -32,9 +32,7 @@ const Cart = () => {
       toast.dismiss();
       toast.success("Customer Details Saved!");
       setStep("payment");
-    } else if (step === "payment" ) {
-      console.log(data, paymentMethod);
-      
+    } else if (step === "payment" ) {      
       setLoading(true);
       toast.loading("Processing Payment...");
       setTimeout(() => {
