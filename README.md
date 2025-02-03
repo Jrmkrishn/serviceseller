@@ -1,11 +1,7 @@
-Here’s a **README.md** file for your project setup and running instructions:
-
----
-
 # **Service Seller POS System**
 
 ## **Overview**
-This project is a **Point of Sale (POS) system** for selling services, built with **Next.js**, **React**, and **Zustand** for state management. It allows users to manage a shopping cart, checkout, and process payments (mocked).
+This project is a **Point of Sale (POS) system** for selling services, built with Next.js 15, React 19, and **Zustand** for state management. It allows users to manage a shopping cart, checkout, and process payments (mocked).
 
 ---
 
@@ -13,8 +9,8 @@ This project is a **Point of Sale (POS) system** for selling services, built wit
 
 ### **1. Clone the Repository**
 ```sh
-git clone https://github.com/yourusername/service-seller-pos.git
-cd service-seller-pos
+git clone https://github.com/Jrmkrishn/serviceseller.git
+cd serviceseller
 ```
 
 ### **2. Install Dependencies**
@@ -23,9 +19,9 @@ Make sure you have **Node.js (v18+)** installed, then run:
 ```sh
 pnpm install
 # or
-npm install
+npm install --legacy-peer-deps
 # or
-yarn install
+yarn install --legacy-peer-deps
 ```
 
 ### **3. Environment Variables**
