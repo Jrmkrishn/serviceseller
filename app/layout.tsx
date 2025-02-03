@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Header from "@/components/header";
 import { Toaster } from "@/components/ui/sonner";
+import NextTopLoader from "nextjs-toploader"
 const inter = Inter({
   subsets: ["latin"]
 })
@@ -26,13 +27,16 @@ export default function RootLayout({
         suppressHydrationWarning
         className={`${inter.className} antialiased`}
       >
+        <NextTopLoader
+          showSpinner={false} 
+        />
         <ThemeProvider
           attribute={"class"}
           defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
-          <Toaster richColors  />
+          <Toaster richColors />
           <Header />
           <main className="container mx-auto min-h-screen mt-28">
             {children}
