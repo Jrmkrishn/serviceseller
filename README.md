@@ -1,36 +1,95 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Here’s a **README.md** file for your project setup and running instructions:
 
-## Getting Started
+---
 
-First, run the development server:
+# **Service Seller POS System**
 
-```bash
+## **Overview**
+This project is a **Point of Sale (POS) system** for selling services, built with **Next.js**, **React**, and **Zustand** for state management. It allows users to manage a shopping cart, checkout, and process payments (mocked).
+
+---
+
+## **Getting Started**
+
+### **1. Clone the Repository**
+```sh
+git clone https://github.com/yourusername/service-seller-pos.git
+cd service-seller-pos
+```
+
+### **2. Install Dependencies**
+Make sure you have **Node.js (v18+)** installed, then run:
+
+```sh
+pnpm install
+# or
+npm install
+# or
+yarn install
+```
+
+### **3. Environment Variables**
+Create a `.env.local` file in the root of the project and configure any required environment variables.
+
+Example:
+```
+NEXT_PUBLIC_API_URL=https://example.com/api
+```
+
+### **4. Run the Development Server**
+```sh
+pnpm dev
+# or
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+Open **[http://localhost:3000](http://localhost:3000)** in your browser.
+
+---
+
+## **Features**
+- 🛒 **Cart Management** – Add, update, and remove services from the cart.
+- 💳 **Mock Checkout** – Simulated payments with Credit Card, UPI, or Cash.
+- 📃 **Receipt Generation** – Prints a receipt after order completion.
+- 🌍 **Multi-language Support** – English, Hindi, Kannada.
+- 🔄 **Smooth Page Transitions** – Auto-scroll to top on page navigation.
+
+---
+
+## **Project Structure**
+```
+/app
+  /(main)
+    /_store          # Zustand state management
+    /components      # Reusable UI components
+    /pages          # Next.js pages
+  /public           # Static assets
+  /lib              # Utility functions & helpers
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## **Assumptions & Limitations**
+### ✅ **Assumptions**
+- The system is designed for **service-based businesses**, not physical products.
+- The **payment system is mocked**, meaning no real transactions occur.
+- Users complete checkout in a **single session** (no user authentication required).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### ❌ **Limitations**
+- **No database integration** – Cart data is stored in memory (via Zustand).
+- **No real payment gateway** – Transactions are simulated for demo purposes.
+- **No backend API** – The project is frontend-only.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## **Contributing**
+1. **Fork the repo** and create a new branch.
+2. Make your changes and **test them locally**.
+3. Submit a **pull request**.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## **License**
+This project is **MIT licensed**.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
